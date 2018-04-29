@@ -29,6 +29,8 @@
 
 (require 'cl-lib)
 
+;;; Code:
+
 (defconst hmac-algorithm-blocksizes
   '((md5 . 64)
     (sha1 . 64)
@@ -39,7 +41,8 @@
   "Mapping from HMAC algorithm to the algorithm's blocksize.")
 
 (defun hmac (algorithm key message &optional binary)
-  "Compute the HMAC for a given message, using a given private key and algorithm.
+  "Compute the HMAC for a given message, using a given private key and
+algorithm.
 
 ALGORITHM is a symbol naming one of the algorithms recognized by
 `secure-hash'.  KEY is a the private key to use.  MESSAGE, a
@@ -58,5 +61,6 @@ string."
     (error "Unsupported hash algorithm %s" algorithm)))
 
 (provide 'hmac)
+
 
 ;;; hmac.el ends here
