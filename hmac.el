@@ -49,7 +49,7 @@ ALGORITHM is a symbol naming one of the algorithms recognized by
 string, is the message to hash.  If BINARY is non-nil, the hmac
 will be returned as a binary string, otherwise as a hexadecimal
 string."
-  (if-let (blocksize (alist-get algorithm hmac-algorithm-blocksizes))
+  (if-let ((blocksize (alist-get algorithm hmac-algorithm-blocksizes)))
       (progn
         (when (> (length key) blocksize)
           (setq key (secure-hash algorithm key)))
