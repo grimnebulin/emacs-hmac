@@ -1,9 +1,9 @@
-;;; hmac.el --- hash-based message authentication code
+;;; hmac.el --- Hash-based message authentication code
 
 ;;; Version: 1.0
 ;;; Author: Sean McAfee
 ;;; Url: https://github.com/grimnebulin/emacs-hmac
-;;; Package-Requires: ((cl-lib "0.5") (emacs "25"))
+;;; Package-Requires: ((emacs "25.1"))
 
 ;; Copyright 2018 Sean McAfee
 
@@ -41,8 +41,7 @@
   "Mapping from HMAC algorithm to the algorithm's blocksize.")
 
 (defun hmac (algorithm key message &optional binary)
-  "Compute the HMAC for a given message, using a given private key and
-algorithm.
+  "Compute the HMAC for a given message, private key and algorithm.
 
 ALGORITHM is a symbol naming one of the algorithms recognized by
 `secure-hash'.  KEY is a the private key to use.  MESSAGE, a
