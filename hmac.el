@@ -28,6 +28,7 @@
 ;;; hash-based message authentication code.
 
 (require 'cl-lib)
+(require 'subr-x)
 
 ;;; Code:
 
